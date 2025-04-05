@@ -1,4 +1,4 @@
-# Practice Lessons from Bruno Book - Building Reproducible Analytical Pipelines With R
+# Lessons from Bruno Book - Building   Reproducible Analytical Pipelines With R
 ![](images/bcover.png)
 
 ## Housing data for Luxembourg
@@ -9,7 +9,7 @@ Currently there is only script ```script_01.R``` that does both data cleaning an
 
 ## Key lessons
 
-This book is for anyone working with data who want to make their work as reproducible as possible. The main goal is to teach you how to use some of the best practices from software engineering and DevOps to make your projects robust, reliable and reproducible. It is divided into two main parts. The dominant theme for part one is 'Don't Repeat Yourself' - DRY while the theme for part two is 'Write It down'.
+This book is for anyone working with data who want to make their work as reproducible as possible. The main goal is to teach you how to use some of the best practices from **software engineering** and **DevOps** to make your projects robust, reliable and reproducible. It is divided into two main parts. The dominant philosophy for part one is **Don't Repeat Yourself** - DRY while the philosophy for part two is **Write It down**.
 
 ### PART 1 - DRY
 
@@ -23,10 +23,25 @@ For our work in data science to be truly reproducible we need to master three th
 
 We need to learn how to version our work using Git. Git is the software used for version control while GitHub is a hosting platform, we have other platforms like GitLab etc, but GitHub is the most common among developers/scientists. With practice anyone can learn Git, its not that much complicated and it offers immense benefits in the long run. You can install Git here: https://git-scm.com/downloads and sign up for a free GitHub account here: https://github.com/. This book will teach you all the basics you need to get started but we have other resources which might be more appealing for starters eg https://guides.github.com/activities/hello-world/.
 
-Trunk based development was thoroughly emphasized in this section, where people work on separate branches to fix or update issues and then these changes are merged to the main/master/trunk branch. Conflict resolution is also explained in detail.
+Trunk based development was thoroughly emphasized in this section, where people work on separate branches to fix or update issues and then these changes are merged back to the main/master/trunk branch. Conflict resolution is also explained in detail.
 
 Further reading: https://trunkbaseddevelopment.com/
 
 **Functional Programming**
 
                       Key takeaways
+
+The use of pure functions is emphasized - these are functions that do not interact in any way with the global environment. Make sure that the functions do not rely on any globally declared variables as their inputs.
+
+```bad <- function(x) {
+    x + y
+}
+```
+
+```good <- function(x, y) {
+   x + y
+}
+```
+
+Functions are first class objects meaning that we can do anything with them just like any other R object.
+Functions that return functions are called function factories.
