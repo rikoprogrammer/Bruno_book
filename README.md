@@ -1,4 +1,4 @@
-# Practice Lessons from Bruno Book - Building Reproducible Analytical Pipelines in R
+# Practice Lessons from Bruno Book - Building Reproducible Analytical Pipelines With R
 
 ![](images/bcover.png)![bcover.png](./bcover.png)![bcover.png](./bcover.png)
 
