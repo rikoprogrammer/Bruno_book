@@ -1,6 +1,5 @@
 # Practice Lessons from Bruno Book - Building Reproducible Analytical Pipelines in R
-
-![](images/bcover.png)![bcover.png](./bcover.png)![bcover.png](./bcover.png)
+![](images/bcover.png)
 
 ## Housing data for Luxembourg
 
@@ -22,4 +21,4 @@ For our work in data science to be truly reproducible we need to master three th
 
                        Key takeaways
 
-We need to learn how to version our work using Git. Git is the software used for version control while GitHub is a hosting platform, we have other platforms like GitLab etc, but GitHub is the most common among developers/scientists. With practice anyone can learn Git, its not that much complicated and it offers immense benefits in the long run. You can install Git here: ``` https://git-scm.com/downloads``` and sign up for a free GitHub account here: ```https://github.com/```. This book will teach you all the basics you need to get started but we have other resources which into much details; eg ```https://guides.github.com/activities/hello-world/```.
+We need to learn how to version our work using Git. Git is the software used for version control while GitHub is a hosting platform, we have other platforms like GitLab etc, but GitHub is the most common among developers/scientists. With practice anyone can learn Git, its not that much complicated and it offers immense benefits in the long run. You can install Git here: https://git-scm.com/downloads and sign up for a free GitHub account here: https://github.com/. This book will teach you all the basics you need to get started but we have other resources which into much details; eg https://guides.github.com/activities/hello-world/.
