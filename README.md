@@ -1,4 +1,4 @@
-# Practice Lessons from Bruno Book - Building Reproducible Analytical Pipelines in R
+# Practice Lessons from Bruno Book - Building Reproducible Analytical Pipelines With R
 ![](images/bcover.png)
 
 ## Housing data for Luxembourg
@@ -21,4 +21,12 @@ For our work in data science to be truly reproducible we need to master three th
 
                        Key takeaways
 
-We need to learn how to version our work using Git. Git is the software used for version control while GitHub is a hosting platform, we have other platforms like GitLab etc, but GitHub is the most common among developers/scientists. With practice anyone can learn Git, its not that much complicated and it offers immense benefits in the long run. You can install Git here: https://git-scm.com/downloads and sign up for a free GitHub account here: https://github.com/. This book will teach you all the basics you need to get started but we have other resources which into much details; eg https://guides.github.com/activities/hello-world/.
+We need to learn how to version our work using Git. Git is the software used for version control while GitHub is a hosting platform, we have other platforms like GitLab etc, but GitHub is the most common among developers/scientists. With practice anyone can learn Git, its not that much complicated and it offers immense benefits in the long run. You can install Git here: https://git-scm.com/downloads and sign up for a free GitHub account here: https://github.com/. This book will teach you all the basics you need to get started but we have other resources which might be more appealing for starters eg https://guides.github.com/activities/hello-world/.
+
+Trunk based development was thoroughly emphasized in this section, where people work on separate branches to fix or update issues and then these changes are merged to the main/master/trunk branch. Conflict resolution is also explained in detail.
+
+Further reading: https://trunkbaseddevelopment.com/
+
+**Functional Programming**
+
+                      Key takeaways
