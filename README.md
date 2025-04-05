@@ -33,15 +33,9 @@ Further reading: https://trunkbaseddevelopment.com/
 
 The use of pure functions is emphasized - these are functions that do not interact in any way with the global environment. Make sure that the functions do not rely on any globally declared variables as their inputs.
 
-```bad <- function(x) {
-    x + y
-}
-```
+```bad <- function(x) { x + y}```
 
-```good <- function(x, y) {
-   x + y
-}
-```
+```good <- function(x, y) {x + y}```
 
 Functions are first class objects meaning that we can do anything with them just like any other R object.
 Functions that return functions are called function factories.
