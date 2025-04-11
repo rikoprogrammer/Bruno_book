@@ -3,9 +3,9 @@
 
 ## Housing data for Luxembourg
 
-These scripts for the R programming language download nominalhousing prices from the *Observatoire de l'Habitat* and tidy them up into a flat data frame.
+These scripts for the R programming language download nominalhousing prices from the _Observatoire de l'Habitat_ and tidy them up into a flat data frame.
 
-Currently there is only script ```script_01.R``` that does both data cleaning and analysis of the data.
+Currently we have three scripts; ```data_cleaning.R``` that performs data cleaning, ```analysis_01.R``` that does some simple analyses and ```functional_programming.R``` that has sample codes for functional programming in R.
 
 ## Key lessons
 
@@ -31,7 +31,7 @@ Further reading: https://trunkbaseddevelopment.com/
 
                       Key takeaways
 
-The use of pure functions is emphasized - these are functions that do not interact in any way with the global environment. Make sure that the functions do not rely on any globally declared variables as their inputs.
+The use of _pure functions_ is emphasized - these are functions that do not interact in any way with the global environment. Make sure that the functions do not rely on any globally declared variables as their inputs.
 
 ```bad <- function(x) { x + y}```
 
@@ -39,3 +39,11 @@ The use of pure functions is emphasized - these are functions that do not intera
 
 Functions are first class objects meaning that we can do anything with them just like any other R object.
 Functions that return functions are called function factories.
+
+Write functions that do one thing and do it well. Write functions that work together. Write functions that handle lists, because that is a universal interface  _borrowed from the Unix philosophy_
+
+List are one of the most important data structures you will work with in R. Many objects in R including models, data frames etc are actually lists. We should aim to write functions that can handle lists.
+
+Use loops sparingly. Instead of loops we can use our own defined functions that abstract the loops, we can use base functions like ```Reduce()``` or use high-order functions implemented in ```purrr``` package. Loops are not highly optimized and can lead to the polluting of the global environment which might cause issues in your pipelines in the long run.
+
+List-column based workflow is highly recommended. This is useful in helping us not to repeat ourselves. A good example is given in the book where we can plot several plots based on a list column in our nested data frame.
