@@ -47,3 +47,11 @@ List are one of the most important data structures you will work with in R. Many
 Use loops sparingly. Instead of loops we can use our own defined functions that abstract the loops, we can use base functions like ```Reduce()``` or use high-order functions implemented in ```purrr``` package. Loops are not highly optimized and can lead to the polluting of the global environment which might cause issues in your pipelines in the long run.
 
 List-column based workflow is highly recommended. This is useful in helping us not to repeat ourselves. A good example is given in the book where we can plot several plots based on a list column in our nested data frame.
+
+**Literate Programming**
+
+      Key takeaways
+
+In literate programming we mix code and prose, which makes the output not just a series of tables, or graphs or predictions, but a complete report that contains the results of the analysis directly embedded into it.
+
+Literate programming has evolved over the years with tools like ```sweave```, ```knitr```, and recently we have ```quarto```. These tools allow you to mix code and prose when generating your report. Output formats can be pdf, word, blogs, books, or even websites.

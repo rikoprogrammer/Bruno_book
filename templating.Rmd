@@ -1,0 +1,70 @@
+---
+title: "Templating"
+output:
+  pdf_document: default
+  html_document: default
+date: "2025-04-12"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## A function that creates tables
+
+```{r}
+create_table <- function(dataset, var){
+table(dataset[var]) |>
+knitr::kable()
+}
+```
+
+The function above uses the `table()` function to create
+frequency tables, and then this gets passed to the
+`knitr::kable()` function that produces a good looking table
+for our rendered document:
+
+```{r}
+create_table(mtcars, "am")
+```
+
+Let’s suppose that we want to generate a document that would
+look like this:
+
+- first a section title, with the name of the variable of interest
+- then the table 
+
+So it would look like this:
+
+## Frequency table for variable: "am"
+
+```{r}
+create_table(mtcars, "am")
+
+```
+We don’t want to create these sections for every variable by hand.
+Instead, we can define a function that returns the R markdown code required to create this. This is this function:
+
+```{r}
+return_section <- function(dataset, var){
+a <- knitr::knit_expand(text = c(
+"## Frequency table for variable:{{variable}}",
+create_table(dataset, var)),
+variable = var)
+cat(a, sep = "\n")
+}
+```
+
+This new function, `return_section()` uses `knitr::knit_expand()` to generate RMarkdown code. Words between `{{}}` get replaced by
+the provided `var` argument to the function.
+
+So when we call `return_section("am")`, `{{variable}}` is replaced by `"am"`. `"am"`
+
+then gets passed down to `create_table()` and the frequency table gets generated.
+We can now generate all the section by simply applying our function to a list of column names:
+
+```{r, results = "asis"}
+invisible(lapply(colnames(mtcars), return_section, dataset = mtcars))
+```
+

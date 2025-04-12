@@ -20,6 +20,7 @@ library(janitor)
 
 #raw url: url <- "https://github.com/b-rodrigues/rap4all/raw/master/datasets/vente-maison-2010-2021.xlsx"
 #url <- "https://is.gd/1vvBAc"
+
 url <- "https://www.is.gd/1vvBAc"
 
 

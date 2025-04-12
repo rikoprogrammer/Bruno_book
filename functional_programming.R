@@ -178,3 +178,56 @@ nested_unemp <- nested_unemp |>
 nested_unemp
 
 nested_unemp$plots
+
+
+## 4TH APRIL 2025
+
+# an example of a function that is not referentially transparent
+
+h <- function(name, food_list = list()){
+  food <- sample(c("lasagna", "cassoulet", "feijoada"), 1)
+  food_list <- append(food_list, food)
+  print(paste0(name, " likes ", food))
+  food_list
+}
+
+h("Eric")
+h("Eric")
+
+
+h <- function(name, food_list = list(), seed=123){
+  
+  set.seed(seed)
+  food <- sample(c("lasagna", "cassoulet", "feijoada"), 1)
+  food_list <- append(food_list, food)
+  print(paste0(name, " likes ", food))
+  food_list
+}
+
+h("Eric")
+h("Eric")
+h("Eric")
+
+#instead of modifying the function we can use withr::with_seed as shown below
+
+library(withr)
+
+h <- function(name, food_list = list()){
+  food <- sample(c("lasagna", "cassoulet", "feijoada"), 1)
+  food_list <- append(food_list, food)
+  print(paste0(name, " likes ", food))
+  food_list
+}
+
+withr::with_seed(seed = 123, h("Eric"))
+withr::with_seed(seed = 123, h("Eric"))
+withr::with_seed(seed = 123, h("Eric"))
+
+# withr::with_tempfile("unemp", {
+#   download.file(
+#     "https://www.is.gd/l57cNX",
+#     destfile = unemp)
+#   load(unemp)
+#   nrow(unemp)
+# }
+# )
