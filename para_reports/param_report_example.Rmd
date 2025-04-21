@@ -1,0 +1,43 @@
+---
+title: "Report for column `r params$var` of dataset `r params$dataset`"
+output:
+  pdf_document: default
+  html_document: default
+date: "2025-04-21"
+params:
+  dataset: mtcars
+  var: am
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Frequency table for `r params$var`
+
+```{r, echo = F}
+create_table <- function(dataset, var){
+dataset <- get(dataset)
+table(dataset[var]) |>
+knitr::kable()
+}
+```
+
+The table below is for variable `r params$var` of dataset `r params$dataset`.
+
+```{r}
+create_table(params$dataset, params$var)
+```
+```{r, eval = FALSE, echo = FALSE}
+# Run these lines to compile the document
+# Set eval and echo to FALSE, so that this does not appear
+
+# in the output, and does not get evaluated when knitting
+rmarkdown::render(
+input = "param_report_example.Rmd",
+params = list(
+dataset = "mtcars",
+var = "cyl"
+)
+)
+```

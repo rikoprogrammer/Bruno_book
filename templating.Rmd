@@ -64,7 +64,10 @@ So when we call `return_section("am")`, `{{variable}}` is replaced by `"am"`. `"
 then gets passed down to `create_table()` and the frequency table gets generated.
 We can now generate all the section by simply applying our function to a list of column names:
 
+
 ```{r, results = "asis"}
-invisible(lapply(colnames(mtcars), return_section, dataset = mtcars))
+invisible(purrr::walk(colnames(mtcars),
+                 return_section, 
+                 dataset = mtcars))
 ```
 

@@ -55,3 +55,5 @@ List-column based workflow is highly recommended. This is useful in helping us n
 In literate programming we mix code and prose, which makes the output not just a series of tables, or graphs or predictions, but a complete report that contains the results of the analysis directly embedded into it.
 
 Literate programming has evolved over the years with tools like ```sweave```, ```knitr```, and recently we have ```quarto```. These tools allow you to mix code and prose when generating your report. Output formats can be pdf, word, blogs, books, or even websites.
+
+Another key  takeaway is the use of parametric reports in Rmarkdown. This enables you to use a template to generate Rmarkdown code that generates related tables or sections. This is key in enabling you to be DRY. An example is given in the Rmd file called ```templating.Rmd```.
