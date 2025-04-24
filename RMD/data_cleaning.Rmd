@@ -26,6 +26,7 @@ The function below uses the permanent URL from the Open Data Portal to access th
 
 
 ```{r}
+
 get_raw_data <- function(url = "https://www.is.gd/1vvBAc"){
 raw_data <- tempfile(fileext = ".xlsx")
 download.file(url,
@@ -156,6 +157,7 @@ communes
 
 ```
 ```{r}
+
 former_communes <- get_former_communes()
 current_communes <- get_current_communes()
 communes <- get_test_communes(former_communes, current_communes)
@@ -211,10 +213,12 @@ We now save the dataset in a folder for further analysis (keep chunk option to
 
 ```{r, eval = FALSE}
 
-write.csv(commune_level_data, "datasets/house_prices_commune_level_data.csv",
+write.csv(commune_level_data,
+          "../datasets/house_prices_commune_level_data.csv",
           row.names = FALSE)
 
-write.csv(country_level_data, "datasets/house_prices_country_level_data.csv",
+write.csv(country_level_data,
+          "../datasets/house_prices_country_level_data.csv",
           row.names = FALSE)
 
 ```

@@ -20,12 +20,13 @@ Let’s load the datasets:
 
 ```{r}
 commune_level_data <- read.csv(
-  "datasets/house_prices_commune_level_data.csv"
+  "../datasets/house_prices_commune_level_data.csv"
 )
 
 country_level_data <- read.csv(
-  "datasets/house_prices_country_level_data.csv"
+  "../datasets/house_prices_country_level_data.csv"
 )
+
 ```
 
 Let’s compute the Laspeyeres index for each commune:
