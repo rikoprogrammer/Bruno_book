@@ -38,8 +38,7 @@ mutate(year = sheet)
 }
 
 raw_data <- map_dfr(
-sheets,
-~read_clean(raw_data,
+sheets, ~read_clean(raw_data,
 skip = 10,
 sheet = .)) %>%
 clean_names()
@@ -47,7 +46,7 @@ raw_data %>%
 rename(
 locality = commune,
 n_offers = nombre_doffres,
-average_price_nominal_euros = prix_moyen_annonce_en_courant,
+average_price_nominal_euros    = prix_moyen_annonce_en_courant,
 average_price_m2_nominal_euros = prix_moyen_annonce_au_m2_en_courant,
 average_price_m2_nominal_euros = prix_moyen_annonce_au_m2_en_courant
 ) %>%

@@ -61,3 +61,5 @@ Another key  takeaway is the use of parametric reports in Rmarkdown. This enable
 ### PART II  Write IT down
 
 In this part of the book, the emphasis was on how to really make our work reproducible. The R scripts are turned into Rmd files, which are later turned into an R package. ```fusen``` is used to turn Rmd files into a package and ```targets``` is used to create a pipeline. Take time to study these two R packages.
+
+To freeze our package versions, the easy solution is to use the ```renv``` package. This package enables you to create **R**eproducible **En**vironments.
