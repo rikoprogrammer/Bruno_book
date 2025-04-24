@@ -11,7 +11,7 @@ Currently we have three scripts; ```data_cleaning.R``` that performs data cleani
 
 This book is for anyone working with data who want to make their work as reproducible as possible. The main goal is to teach you how to use some of the best practices from **software engineering** and **DevOps** to make your projects robust, reliable and reproducible. It is divided into two main parts. The dominant philosophy for part one is **Don't Repeat Yourself** - DRY while the philosophy for part two is **Write It down**.
 
-### PART 1 - DRY
+### PART I - DRY
 
 For our work in data science to be truly reproducible we need to master three things; **version control** with Git, **Functional** Programming and **Literate** programming.
 
@@ -57,3 +57,7 @@ In literate programming we mix code and prose, which makes the output not just a
 Literate programming has evolved over the years with tools like ```sweave```, ```knitr```, and recently we have ```quarto```. These tools allow you to mix code and prose when generating your report. Output formats can be pdf, word, blogs, books, or even websites.
 
 Another key  takeaway is the use of parametric reports in Rmarkdown. This enables you to use a template to generate Rmarkdown code that generates related tables or sections. This is key in enabling you to be DRY. An example is given in the Rmd file called ```templating.Rmd```.
+
+### PART II  Write IT down
+
+In this part of the book, the emphasis was on how to really make our work reproducible. The R scripts are turned into Rmd files, which are later turned into an R package. ```fusen``` is used to turn Rmd files into a package and ```targets``` is used to create a pipeline. Take time to study these two R packages.

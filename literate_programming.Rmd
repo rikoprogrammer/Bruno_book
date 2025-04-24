@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE,
 
 ## Introduction
 
-Rmarkdown uses markdown language to help researchers or anyone really to mix their code and prose to form a unifying report. The report can be in multiple formats like word, html, pdf or even slides. For pdf reports you will need latex installed on your system. The easiest way of installing latex is via using the ```tinytex``` package by Yihui Xie the creater of ```knitr``` package.
+Rmarkdown uses markdown language to help researchers or anyone really to mix their code and prose to form a unifying report. The report can be in multiple formats like word, html, pdf or even slides. For pdf reports you will need latex installed on your system. The easiest way of installing latex is via using the ```tinytex``` package by Yihui Xie the creator of ```knitr``` package.
 
 Simple type the below code in the console
 

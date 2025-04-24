@@ -7,6 +7,8 @@ date: "2025-04-21"
 params:
   dataset: mtcars
   var: am
+editor_options: 
+  chunk_output_type: console
 ---
 
 
@@ -37,7 +39,31 @@ rmarkdown::render(
 input = "param_report_example.Rmd",
 params = list(
 dataset = "mtcars",
-var = "cyl"
+var = "mpg"
 )
 )
+
+```
+
+If you want to compile all the reports at once use the below code;
+
+```{r, eval = F, echo = F}
+
+columns <- colnames(mtcars)
+
+lapply(columns,
+ (\(x)rmarkdown::render(
+input = "param_report_example.Rmd",
+output_file = paste0(
+"param_report_example_", x, ".html"
+),
+params = list(
+dataset = "mtcars",
+var = x
+)
+)
+)
+)
+
+
 ```
