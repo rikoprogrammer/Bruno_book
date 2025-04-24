@@ -26,6 +26,7 @@ The function below uses the permanent URL from the Open Data Portal to access th
 
 
 ```{r}
+
 get_raw_data <- function(url = "https://www.is.gd/1vvBAc"){
 raw_data <- tempfile(fileext = ".xlsx")
 download.file(url,
@@ -38,8 +39,7 @@ mutate(year = sheet)
 }
 
 raw_data <- map_dfr(
-sheets,
-~read_clean(raw_data,
+sheets, ~read_clean(raw_data,
 skip = 10,
 sheet = .)) %>%
 clean_names()
@@ -47,7 +47,7 @@ raw_data %>%
 rename(
 locality = commune,
 n_offers = nombre_doffres,
-average_price_nominal_euros = prix_moyen_annonce_en_courant,
+average_price_nominal_euros    = prix_moyen_annonce_en_courant,
 average_price_m2_nominal_euros = prix_moyen_annonce_au_m2_en_courant,
 average_price_m2_nominal_euros = prix_moyen_annonce_au_m2_en_courant
 ) %>%
@@ -157,6 +157,7 @@ communes
 
 ```
 ```{r}
+
 former_communes <- get_former_communes()
 current_communes <- get_current_communes()
 communes <- get_test_communes(former_communes, current_communes)
@@ -212,10 +213,12 @@ We now save the dataset in a folder for further analysis (keep chunk option to
 
 ```{r, eval = FALSE}
 
-write.csv(commune_level_data, "datasets/house_prices_commune_level_data.csv",
+write.csv(commune_level_data,
+          "../datasets/house_prices_commune_level_data.csv",
           row.names = FALSE)
 
-write.csv(country_level_data, "datasets/house_prices_country_level_data.csv",
+write.csv(country_level_data,
+          "../datasets/house_prices_country_level_data.csv",
           row.names = FALSE)
 
 ```
